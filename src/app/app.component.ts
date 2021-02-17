@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Anuncio} from './anuncios/anuncio/anuncio';
+
+import {AnuncioService} from './anuncios/anuncio/anuncio.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'loja-client';
+
+ anuncios: Anuncio[] = [];
+ constructor(anuncioService: AnuncioService) {
+   anuncioService.listFromUser('Diego').subscribe(anuncios => this.anuncios = anuncios);
+ }
 }
