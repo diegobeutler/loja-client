@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AnunciosModule} from './anuncios/anuncios.module';
-import { HttpClientModule} from '@angular/common/http';
+import {ErrorsModule} from './errors/errors.module';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     AnunciosModule,
-    HttpClientModule
+    ErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 import {Anuncio} from './anuncios/anuncio/anuncio';
 
 import {AnuncioService} from './anuncios/anuncio/anuncio.service';
@@ -9,10 +8,8 @@ import {AnuncioService} from './anuncios/anuncio/anuncio.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  ngOnInit(): void {
+  }
 
- anuncios: Anuncio[] = [];
- constructor(anuncioService: AnuncioService) {
-   anuncioService.listFromUser('Diego').subscribe(anuncios => this.anuncios = anuncios);
- }
 }

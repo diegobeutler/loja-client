@@ -1,0 +1,18 @@
+<p class="text-center text-muted" *ngIf="!anuncios.length">
+  Sorry, no ads
+</p>
+
+<ol class="list-unstyled">
+    <li *ngFor="let cols of rows" class="row">
+      <div *ngFor="let anuncio of cols" class="col-4">
+        <app-anuncio
+          [titulo] = "anuncio.titulo"
+                      [mensagem] = "anuncio.mensagem"
+                      [url] = "anuncio.urlImagem">
+
+        </app-anuncio>
+      </div>
+    </li>
+</ol>
+
+
