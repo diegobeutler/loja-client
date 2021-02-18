@@ -13,7 +13,7 @@ export class AnuncioListComponent implements OnInit {
 
   anuncios: Anuncio[] = [];
   filter = '';
-  debounce: Subject<string> = new Subject<string>();
+ // debounce: Subject<string> = new Subject<string>();
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
@@ -22,7 +22,7 @@ export class AnuncioListComponent implements OnInit {
   ngOnInit(): void {
     this.anuncios = this.activatedRoute.snapshot.data['anuncios'];
   }
-  onKey($event: KeyboardEvent): string{
-    return ($event.target as HTMLInputElement).value;
+  onKey($event: KeyboardEvent): void{
+    this.filter =  ($event.target as HTMLInputElement).value;
   }
 }

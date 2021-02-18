@@ -7,20 +7,18 @@ import { AnuncioListComponent } from './anuncio-list/anuncio-list.component';
 import { AnuncioFormComponent } from './anuncio-form/anuncio-form.component';
 import { AnunciosComponent } from './anuncio-list/anuncios/anuncios.component';
 import {FilterByTitulo} from './anuncio-list/filter-by-titulo.pipe';
+import {AnuncioFormModule} from './anuncio-form/anuncio-form.module';
+import {AnuncioModule} from './anuncio/anuncio.module';
+import {AnuncioListModule} from './anuncio-list/anuncio-list.module';
 
 
 
 @NgModule({
-  declarations: [
-    AnuncioComponent,
-    AnuncioListComponent,
-    AnuncioFormComponent,
-    AnunciosComponent,
-    FilterByTitulo
-  ],
+
   imports: [
-    HttpClientModule,
-    CommonModule
+    AnuncioModule,
+    AnuncioFormModule,
+    AnuncioListModule
   ]
 })
 export class AnunciosModule {}

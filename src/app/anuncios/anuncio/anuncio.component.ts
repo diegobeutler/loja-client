@@ -8,8 +8,8 @@ import {Component, Input} from '@angular/core';
 export class AnuncioComponent {
 
   constructor() { }
-  @Input() titulo = "";
-  @Input() mensagem = "";
-  @Input() url = ""
+  @Input() titulo = '';
+  @Input() mensagem = '';
+  @Input() url = '';
 
 }

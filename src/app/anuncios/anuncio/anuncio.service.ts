@@ -11,6 +11,6 @@ export class AnuncioService {
   }
 
   listFromUser(userName: string): Observable<Anuncio[]> {
-   return this.http.get<Anuncio[]>(environment.api + '/anuncios/user/' + userName);
+   return this.http.get<Anuncio[]>(environment.api + '/anuncios/user/' + 'Diego');
   }
 }

@@ -1,3 +1,9 @@
-<h1>{{titulo}}</h1>
-<h2>{{mensagem}}</h2>
-<img class= "img-thumbnail" [src] = "url">
+
+<div class="card" style="width: 25rem;">
+  <img [src]="url" class="card-img-top img-thumbnail" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{titulo}}</h5>
+    <p class="card-text">{{mensagem}}</p>
+    <a href="#" class="btn btn-primary">Visualizar</a>
+  </div>
+</div>

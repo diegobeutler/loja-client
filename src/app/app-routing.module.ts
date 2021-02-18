@@ -8,7 +8,7 @@ import {AnuncioListResolver} from './anuncios/anuncio-list/anuncio-list.resolver
 
 const routes: Routes = [
   {
-    path: 'user/:userName',
+    path: 'home',
     component: AnuncioListComponent,
     resolve: {
       anuncios: AnuncioListResolver
