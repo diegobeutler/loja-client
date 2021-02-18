@@ -5,17 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AnunciosModule} from './anuncios/anuncios.module';
 import {ErrorsModule} from './errors/errors.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import {NavbarModule} from './navbar/navbar.module';
+import { HomeComponent } from './home/home.component';
+import {AnuncioListModule} from './anuncios/anuncio-list/anuncio-list.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AnunciosModule,
-    ErrorsModule
+    ErrorsModule,
+    NavbarModule,
+    AnuncioListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

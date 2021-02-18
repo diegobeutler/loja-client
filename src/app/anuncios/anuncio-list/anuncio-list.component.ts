@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Anuncio} from '../anuncio/anuncio';
 import {AnuncioService} from '../anuncio/anuncio.service';
 import {ActivatedRoute} from '@angular/router';
@@ -12,7 +12,7 @@ import {Subject} from 'rxjs';
 export class AnuncioListComponent implements OnInit {
 
   anuncios: Anuncio[] = [];
-  filter = '';
+  @Input() filter = '';
  // debounce: Subject<string> = new Subject<string>();
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -22,7 +22,8 @@ export class AnuncioListComponent implements OnInit {
   ngOnInit(): void {
     this.anuncios = this.activatedRoute.snapshot.data['anuncios'];
   }
-  onKey($event: KeyboardEvent): void{
-    this.filter =  ($event.target as HTMLInputElement).value;
-  }
+  // getFilter( event: string ): void{
+  //   this.filter = event;
+  // }
+
 }

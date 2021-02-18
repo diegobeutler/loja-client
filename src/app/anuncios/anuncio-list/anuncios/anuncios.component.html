@@ -6,9 +6,7 @@
     <li *ngFor="let cols of rows" class="row">
       <div *ngFor="let anuncio of cols" class="col-4">
         <app-anuncio
-          [titulo] = "anuncio.titulo"
-                      [mensagem] = "anuncio.mensagem"
-                      [url] = "anuncio.urlImagem">
+          [anuncio] = anuncio>
 
         </app-anuncio>
       </div>

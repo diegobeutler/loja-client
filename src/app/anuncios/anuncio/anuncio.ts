@@ -1,7 +1,11 @@
-export interface Anuncio {
+import {Injectable} from '@angular/core';
+
+@Injectable({ providedIn: 'root'})
+export class Anuncio {
   id: number;
-  titulo: string;
-  mensagem: string;
-  urlImagem: string;
+  titulo = '';
+  mensagem = '';
+  urlImagem = '';
   data: Date;
 }
+

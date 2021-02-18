@@ -11,8 +11,7 @@ export class AnuncioListResolver implements Resolve<Observable<Anuncio[]>>{
   constructor(private service: AnuncioService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Anuncio[]> {
-    const userName = route.params.userName;
-    return this.service.listFromUser(userName);
+    return this.service.listar();
   }
 
 }
