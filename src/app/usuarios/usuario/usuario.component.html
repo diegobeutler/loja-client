@@ -1,0 +1,9 @@
+ <div *ngFor="let usuario of usuarios">
+  <div class="card mb-2" style="background: darkgrey">
+    <div class="card-body">
+      <h5 class="card-title">{{usuario.nome}}</h5>
+      <p class="card-text">{{usuario.email}}</p>
+      <a href="u/add/{{usuario.id}}" class="btn btn-primary nav-link">Visualizar</a>
+    </div>
+  </div>
+ </div>

@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <form [formGroup]="usuarioForm" class="row" (submit)="upload()">
+    <div class="col-md-6 text-center">
+       <textarea
+         formControlName="nome"
+         class="form-control form-control-sm"
+         placeholder="Nome"></textarea>
+      <app-vmessage
+        text="Tamanho mínimo de 3 caracteres"
+        *ngIf="usuarioForm.get('nome')?.errors?.minLength">
+      </app-vmessage>
+      <textarea
+         formControlName="senha"
+         class="form-control form-control-sm"
+         placeholder="Senha"></textarea>
+      <app-vmessage
+        text="Tamanho da senha deve ser entre 6 a 15 caracteres"
+        *ngIf="usuarioForm.get('senha')?.errors?.maxlength || usuarioForm.get('senha')?.errors?.minLength">
+      </app-vmessage>
+    </div>
+
+    <div class="col-md-5">
+      <div class="form-group">
+        <textarea
+          formControlName="email"
+          class="form-control form-control-sm"
+          placeholder="E-mail"></textarea>
+
+        <app-vmessage
+          text="tamamanho mínimo de 5 caracteres e máximo 50 caracteres"
+          *ngIf="usuarioForm.get('senha')?.errors?.maxlength || usuarioForm.get('senha')?.errors?.maxlength">
+        </app-vmessage>
+
+      </div>
+
+      <button [disabled]="usuarioForm.invalid" type="submit" class="btn btn-primary btn-block">
+        Salvar
+      </button>
+
+      <a class="btn btn-secondary btn-block">Cancelar</a>
+    </div>
+    <div class="col-1">
+      <i *ngIf="usuario.id" aria-hidden="true" class="fa fa-trash col-1 fa-2x"
+         title="remover" (click)="remover()"
+      ></i>
+    </div>
+
+  </form>
+</div>
+

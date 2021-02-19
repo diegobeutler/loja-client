@@ -5,17 +5,28 @@ import {AnuncioListComponent} from './anuncios/anuncio-list/anuncio-list.compone
 import {AnuncioFormComponent} from './anuncios/anuncio-form/anuncio-form.component';
 import {NotFoundComponent} from './errors/not-found/not-found.component';
 import {AnuncioListResolver} from './anuncios/anuncio-list/anuncio-list.resolver';
+import {HomeComponent} from './home/home.component';
+import {UsuarioFormComponent} from './usuarios/usuario-form/usuario-form.component';
+import {UsuarioListComponent} from './usuarios/usuario-list/usuario-list.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: AnuncioListComponent,
+    component: HomeComponent,
     resolve: {
       anuncios: AnuncioListResolver
     }
   },
   {path: 'a/add', component: AnuncioFormComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: 'a/add/:id', component: AnuncioFormComponent},
+  {path: 'u/add', component: UsuarioFormComponent},
+  {path: 'u/add/:id', component: UsuarioFormComponent},
+  {path: 'u/list', component: UsuarioListComponent},
+  {path: '**',
+    component: HomeComponent,
+    resolve: {
+      anuncios: AnuncioListResolver
+    }}
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Anuncio} from './anuncio';
 
 @Component({
   selector: 'app-anuncio',
@@ -8,8 +9,6 @@ import {Component, Input} from '@angular/core';
 export class AnuncioComponent {
 
   constructor() { }
-  @Input() titulo = '';
-  @Input() mensagem = '';
-  @Input() url = '';
+  @Input() anuncio: any;
 
 }

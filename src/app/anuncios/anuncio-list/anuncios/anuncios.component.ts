@@ -22,8 +22,8 @@ export class AnunciosComponent implements OnChanges {
   groupColumns(anuncios: Anuncio[]): any[] {
     const newRows = [];
 
-    for (let index = 0; index < anuncios.length; index += 3) {
-      newRows.push(anuncios.slice(index, index + 3));
+    for (let index = 0; index < anuncios.length; index += 4) {
+      newRows.push(anuncios.slice(index, index + 4));
     }
     return newRows;
   }
