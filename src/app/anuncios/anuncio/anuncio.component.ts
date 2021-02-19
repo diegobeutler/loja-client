@@ -10,11 +10,5 @@ export class AnuncioComponent {
 
   constructor() { }
   @Input() anuncio: any;
-<<<<<<< HEAD
-=======
-  @Input() titulo = '';
-  @Input() mensagem = '';
-  @Input() url = '';
->>>>>>> origin/master
 
 }

@@ -5,10 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AnunciosModule} from './anuncios/anuncios.module';
 import {ErrorsModule} from './errors/errors.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import {NavbarModule} from './navbar/navbar.module';
-import { HomeComponent } from './home/home.component';
-import {AnuncioListModule} from './anuncios/anuncio-list/anuncio-list.module';
 
 import {NavbarModule} from './navbar/navbar.module';
 import { HomeComponent } from './home/home.component';
@@ -29,17 +25,11 @@ import {UsuariosModule} from './usuarios/usuarios.module';
     BrowserModule,
     AppRoutingModule,
     AnunciosModule,
-<<<<<<< HEAD
     UsuariosModule,
     ErrorsModule,
     NavbarModule,
     AnuncioListModule,
     ReactiveFormsModule
-=======
-    ErrorsModule,
-    NavbarModule,
-    AnuncioListModule
->>>>>>> origin/master
   ],
   providers: [],
   bootstrap: [AppComponent]

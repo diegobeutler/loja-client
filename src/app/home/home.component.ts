@@ -8,10 +8,7 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 export class HomeComponent implements OnInit {
 
   @Output() filter = '';
-<<<<<<< HEAD
   @Input() isAnuncio = false;
-=======
->>>>>>> origin/master
   constructor() { }
 
   ngOnInit(): void {
