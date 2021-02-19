@@ -14,11 +14,15 @@ export class AnuncioFormComponent implements OnInit {
   // @ts-ignore
   anuncioForm: FormGroup;
   // @ts-ignore
+<<<<<<< HEAD
   url = '';
+=======
+>>>>>>> origin/master
 
   constructor(private formBuilder: FormBuilder,
               private anuncioService: AnuncioService,
               private router: Router,
+<<<<<<< HEAD
               public anuncio: Anuncio,
               private activatedRoute: ActivatedRoute) { }
 
@@ -37,6 +41,31 @@ export class AnuncioFormComponent implements OnInit {
         this.anuncioForm.controls['mensagem'].setValue(this.anuncio.mensagem);
       });
     }
+=======
+              private anuncio: Anuncio,
+              private activatedRoute: ActivatedRoute) { }
+  url = '';
+  ngOnInit(): void {
+    const id =  this.activatedRoute.snapshot.params.id;
+    if (id) {
+      this.anuncioService.findById(id).subscribe(e =>{
+        this.anuncio = e;
+        this.anuncioForm = this.formBuilder.group({
+          url: [this.anuncio.urlImagem || '', Validators.minLength(3)],
+          titulo: [this.anuncio.titulo || '', [Validators.maxLength(50), Validators.minLength(3)]],
+          mensagem: [this.anuncio.mensagem || '', [Validators.maxLength(300), Validators.minLength(3)]]
+        });
+      });
+    } else{
+      this.anuncioForm = this.formBuilder.group({
+        url: [this.anuncio.urlImagem || '', Validators.minLength(3)],
+        titulo: [this.anuncio.titulo || '', [Validators.maxLength(50), Validators.minLength(3)]],
+        mensagem: [this.anuncio.mensagem || '', [Validators.maxLength(300), Validators.minLength(3)]]
+      });
+    }
+
+
+>>>>>>> origin/master
   }
 
   upload(): void {
@@ -54,6 +83,7 @@ export class AnuncioFormComponent implements OnInit {
   setFile($event: any): void {
     this.url = $event;
   }
+<<<<<<< HEAD
 
   remover(): void {
     // this.anuncio.urlImagem = this.anuncioForm.get('url')?.value;
@@ -69,4 +99,6 @@ export class AnuncioFormComponent implements OnInit {
   setUrl(): void {
     this.url =  this.anuncioForm.get('url')?.value;
   }
+=======
+>>>>>>> origin/master
 }
