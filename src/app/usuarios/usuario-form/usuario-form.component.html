@@ -1,22 +1,22 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <form [formGroup]="usuarioForm" class="row" (submit)="upload()">
-    <div class="col-md-6 text-center">
+  <form [formGroup]="usuarioForm" class="row" (submit)="salvar()">
+    <div class="col-md-6 text-center form-group">
        <textarea
          formControlName="nome"
          class="form-control form-control-sm"
          placeholder="Nome"></textarea>
       <app-vmessage
-        text="Tamanho mínimo de 3 caracteres"
-        *ngIf="usuarioForm.get('nome')?.errors?.minLength">
+        text="Tamanho mínimo para nome é de 3 caracteres"
+        *ngIf="usuarioForm.get('nome')?.errors?.minlength">
       </app-vmessage>
       <textarea
          formControlName="senha"
          class="form-control form-control-sm"
          placeholder="Senha"></textarea>
       <app-vmessage
-        text="Tamanho da senha deve ser entre 6 a 15 caracteres"
-        *ngIf="usuarioForm.get('senha')?.errors?.maxlength || usuarioForm.get('senha')?.errors?.minLength">
+        text="Tamanho da senha deve estar entre 6 a 15 caracteres"
+        *ngIf="usuarioForm.get('senha')?.errors?.maxlength || usuarioForm.get('senha')?.errors?.minlength">
       </app-vmessage>
     </div>
 
@@ -28,8 +28,8 @@
           placeholder="E-mail"></textarea>
 
         <app-vmessage
-          text="tamamanho mínimo de 5 caracteres e máximo 50 caracteres"
-          *ngIf="usuarioForm.get('senha')?.errors?.maxlength || usuarioForm.get('senha')?.errors?.maxlength">
+          text="Tamamanho do e-mail é deve estar entre 5 e 50 caracteres"
+          *ngIf="usuarioForm.get('senha')?.errors?.maxlength || usuarioForm.get('senha')?.errors?.minlength">
         </app-vmessage>
 
       </div>

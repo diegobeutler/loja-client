@@ -35,7 +35,7 @@ export class UsuarioFormComponent implements  OnInit{
     }
   }
 
-  upload(): void {
+  salvar(): void {
     this.usuario.nome = this.usuarioForm.get('nome')?.value;
     this.usuario.email = this.usuarioForm.get('email')?.value;
     this.usuario.senha = this.usuarioForm.get('senha')?.value;
@@ -47,7 +47,7 @@ export class UsuarioFormComponent implements  OnInit{
 
   remover(): void {
     this.usuarioService.remover(this.usuario).subscribe(() => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/u/list']);
     });
   }
 

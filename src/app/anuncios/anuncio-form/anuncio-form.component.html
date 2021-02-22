@@ -26,13 +26,10 @@
           placeholder="Título"></textarea>
 
         <app-vmessage
-          text="Tamanho máximo para o título é de 50 caracteres"
-          *ngIf="anuncioForm.get('titulo')?.errors?.maxlength">
+          text=" min 3Tamanho máximo para o título é de 50 caracteres"
+          *ngIf="anuncioForm.get('titulo')?.errors?.maxlength || anuncioForm.get('titulo')?.errors?.minlength">
         </app-vmessage>
-        <app-vmessage
-          text="Tamanho mínimo para a mensagem é de 3 caracteres"
-          *ngIf="anuncioForm.get('titulo')?.errors?.minlength">
-        </app-vmessage>
+
       </div>
 
         <div class="form-group">
