@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UsuarioService} from '../usuario/usuario.service';
 import {Usuario} from '../usuario/usuario';
+import {MymessageService} from '../../mymessage/mymessage.service';
 
 @Component({
   selector: 'app-usuario-form',
@@ -16,7 +17,8 @@ export class UsuarioFormComponent implements  OnInit{
               private usuarioService: UsuarioService,
               private router: Router,
               public usuario: Usuario,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private myMessageService: MymessageService) { }
 
   ngOnInit(): void {
     this.usuarioForm = this.formBuilder.group({
@@ -47,6 +49,10 @@ export class UsuarioFormComponent implements  OnInit{
 
   remover(): void {
     this.usuarioService.remover(this.usuario).subscribe(() => {
+      this.router.navigate(['/u/list']);
+    }, error => {
+      alert('Não foi possível excluir usuário, Usuario possui anúncios vinculados');
+      // this.myMessageService.info('Não foi possível excluir usuário, Usuario possui anúncios vinculados');
       this.router.navigate(['/u/list']);
     });
   }

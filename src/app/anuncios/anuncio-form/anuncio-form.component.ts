@@ -35,6 +35,7 @@ export class AnuncioFormComponent implements OnInit {
         this.anuncioForm.controls['url'].setValue(this.anuncio.urlImagem);
         this.anuncioForm.controls['titulo'].setValue(this.anuncio.titulo);
         this.anuncioForm.controls['mensagem'].setValue(this.anuncio.mensagem);
+        this.url = this.anuncioForm.get('url')?.value;
       });
     }
   }
@@ -50,16 +51,7 @@ export class AnuncioFormComponent implements OnInit {
     });
   }
 
-
-  setFile($event: any): void {
-    this.url = $event;
-  }
-
   remover(): void {
-    // this.anuncio.urlImagem = this.anuncioForm.get('url')?.value;
-    // this.anuncio.titulo = this.anuncioForm.get('titulo')?.value;
-    // this.anuncio.mensagem = this.anuncioForm.get('mensagem')?.value;
-
     this.anuncioService.remover(this.anuncio).subscribe(() => {
       this.router.navigate(['/home']);
 

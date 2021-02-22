@@ -1,2 +1,2 @@
-<app-navbar></app-navbar>
-<app-usuario [usuarios]="usuarios"></app-usuario>
+<app-navbar (filterOutput)="filter = $event" [filter]="filter"></app-navbar>
+<app-usuario [usuarios]="usuarios | filterByUser: filter"></app-usuario>

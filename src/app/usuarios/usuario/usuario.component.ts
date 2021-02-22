@@ -9,7 +9,7 @@ import {Usuario} from './usuario';
 export class UsuarioComponent implements OnInit {
   // @ts-ignore
   @Input() usuarios: Usuario[];
-
+  filter = ';'
   constructor() { }
 
   ngOnInit(): void {

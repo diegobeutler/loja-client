@@ -23,8 +23,8 @@ export class UsuarioService{
   }
 
 
-  remover(usuario: Usuario): any {
-    return this.http.delete<any>(environment.api + '/usuario/' + usuario.id);
+  remover(usuario: Usuario): Observable<void> {
+    return this.http.delete<void>(environment.api + '/usuario/' + usuario.id) ;
   }
 
   listar(): Observable<Usuario[]> {

@@ -7,17 +7,21 @@ import {VMessageModule} from '../vmessage/vmessage.module';
 import {NavbarModule} from '../navbar/navbar.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
+import {MymessageModule} from '../mymessage/mymessage.module';
+import {FilterByUser} from './usuario-list/filter-by-user.pipe';
 
 @NgModule({
   declarations: [UsuarioComponent,
     UsuarioFormComponent,
-    UsuarioListComponent],
+    UsuarioListComponent,
+  FilterByUser],
   imports: [
     CommonModule,
     HttpClientModule,
     VMessageModule,
     NavbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MymessageModule
   ],
   exports: [ UsuarioComponent, UsuarioFormComponent, UsuarioListComponent ]
 })

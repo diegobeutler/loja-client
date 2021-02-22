@@ -11,7 +11,7 @@
 
        ></textarea>
       <h5 *ngIf="url" class="mt-3"> Imagem Selecionada</h5>
-      <img *ngIf="url" class="" [src]="url" alt="..." class="img-responsive mt-2" style="min-width: 250px">
+      <img *ngIf="url" class="" [src]="url" alt="..." class="img-responsive mt-2" style="min-width: 250px; max-width: 400px">
       <app-vmessage
         text="Por favor, insira uma url"
         *ngIf="anuncioForm.get('url')?.errors?.minlength">
@@ -26,7 +26,7 @@
           placeholder="Título"></textarea>
 
         <app-vmessage
-          text=" min 3Tamanho máximo para o título é de 50 caracteres"
+          text="Tamanho do título deve estar entre 3 e 50 caracteres"
           *ngIf="anuncioForm.get('titulo')?.errors?.maxlength || anuncioForm.get('titulo')?.errors?.minlength">
         </app-vmessage>
 
@@ -52,7 +52,7 @@
         Salvar
       </button>
 
-      <a class="btn btn-secondary btn-block">Cancelar</a>
+      <a href="a/list" class="btn btn-secondary btn-block">Cancelar</a>
     </div>
     <div class="col-1">
       <i *ngIf="anuncio.id" aria-hidden="true" class="fa fa-trash col-1 fa-2x"
